@@ -15,7 +15,7 @@ if not os.path.exists(app.config['DOWNLOAD_FOLDER']):
     os.makedirs(app.config['DOWNLOAD_FOLDER'])
 '''
 
-@app.route("/")
+@app.route("/home")
 def home():
     return render_template("home.html")
 
