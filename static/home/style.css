@@ -1,0 +1,78 @@
+h1{
+    font-family: "Bona Nova SC", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #344e41;
+    text-shadow: 4px 4px 6px #ffffff;
+}
+
+body {
+  background-image: url('https://i.pinimg.com/originals/ae/68/62/ae686200f7fb7b69fd8d992afcd8f151.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  
+  margin: 0; 
+
+  font-family: "Bona Nova SC", serif;
+  font-weight: 900;
+  font-style: normal;
+  text-shadow: 4px 4px 6px #000000;
+
+
+
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* Full viewport height */
+    
+    font-family: "Bona Nova SC", serif;
+    font-weight: 800;
+    font-style: normal;
+
+}
+
+.button-container {
+    margin-top: 20px; /* Space between heading and buttons */
+}
+
+.btn {
+    margin: 5px; /* Space between buttons */
+}
+
+.custom-btn1 {
+    background-color: #3A5A40; /* Custom background color */
+    color: #dad7cd; /* Text color */
+    border-radius: none; /* Remove border */
+    transition: background-color 10s;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.638);
+}
+
+.custom-btn1:hover {
+    background-color: #344e41; /* Darker shade on hover */
+}
+
+.custom-btn2 {
+    background-color: #3A5A40;
+    color: #dad7cd;
+    border: none;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.638);
+}
+
+.custom-btn2:hover {
+    background-color: #344e41; /* Darker shade on hover */
+}
+
+.navbar a {
+    color: #ffffff; /* text color for links in the navbar */
+}
+
+.navbar a:hover {
+    color: #000000; /* lighter text color on hover */
+    transition: color 0.3s;
+}

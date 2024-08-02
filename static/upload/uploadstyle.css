@@ -1,0 +1,156 @@
+h1{
+    font-family: "Bona Nova SC", serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    color: #344e41;
+    text-shadow: 4px 4px 6px #ffffff;
+}
+
+body {
+    background-image: url('https://i.pinimg.com/originals/ae/68/62/ae686200f7fb7b69fd8d992afcd8f151.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    
+    margin: 0; 
+  
+    font-family: "Bona Nova SC", serif;
+    font-weight: 900;
+    font-style: normal;
+    text-shadow: 4px 4px 6px #000000;
+  }
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form-content {
+    width: 80%;
+    max-width: 800px;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-controls {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    margin-bottom: 5px;
+    font-family: "Bona Nova SC", serif;
+    color: #344e41;
+    font-size: larger;
+    text-shadow: 4px 4px 6px #ffffff;
+}
+
+.textarea-content,
+.input-file,
+.input-number,
+.input-text,
+.textarea-formatted {
+    margin-bottom: 10px;
+    padding: 10px;   
+    font-family: "Bona Nova SC", serif;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input-file{
+    width: 40%;
+    
+}
+
+.input-number,.input-text{
+    width: 50%;
+}
+
+.button-submit,
+.button-download {
+    align-self: flex-start;
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-family: "Bona Nova SC", serif;
+    font-size: 16px;
+    color: #fff;
+    background-color: #344e41;
+    border: none;
+    border-radius: 4px;
+    
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-submit{
+    font-family: "Bona Nova SC", serif;
+    font-weight: 600;
+    font-style: normal;
+    text-shadow: 4px 4px 6px #000000;
+}
+
+.button-submit:hover,
+.button-download:hover {
+    background-color: #283c33;
+    text-decoration: none;
+    color: #000000;
+    font-family: "Bona Nova SC", serif;
+    font-weight: 600;
+    font-style: normal;
+    
+}
+
+.button-download,
+.button-submit{
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.638);
+}
+
+.textarea-content,
+.textarea-formatted {
+    height: 350px;
+    background-color: #ffffffaf;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.638);
+}
+
+.input-group {
+    display: flex;
+    gap: 10px; /* Adjust the gap between the inputs as needed */
+    
+}
+
+.input-number,
+.input-text {
+    flex: 1; /* Allows inputs to grow and fill the available space equally */
+    background-color: #ffffffaf;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.638);
+    
+}
+
+
+/* Style for the file input button */
+.choose-file-button {
+    border: 1px solid #cccccc00;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: "Bona Nova SC", serif;
+    font-size: 16px;
+    color: #344e41;
+    background-color: #ffffff00;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Change background color and border color on hover */
+.choose-file-button:hover {
+    background-color: #ffffff;
+    
+}

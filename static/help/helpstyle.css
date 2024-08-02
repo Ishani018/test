@@ -1,0 +1,88 @@
+/* General body and font styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('https://i.pinimg.com/originals/ae/68/62/ae686200f7fb7b69fd8d992afcd8f151.png');
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    font-family: "Bona Nova SC", serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Custom card styles */
+.custom-card {
+    position: relative; /* Enables absolute positioning inside */
+    background-color: #ffffffcc; /* Slightly transparent white */
+    border: 1px solid #344e41;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    text-align: left;
+}
+
+/* Card title styles */
+.custom-card .card-title {
+    font-family: "Bona Nova SC", serif;
+    color: #344e41;
+    font-weight: 700;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px #ffffff;
+}
+
+/* Card subtitle styles */
+.custom-card .card-subtitle {
+    font-family: "Bona Nova SC", serif;
+    color: #6c757d;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+/* Card text styles */
+.custom-card .card-text {
+    font-family: "Bona Nova SC", serif;
+    color: #344e41;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* Card link styles */
+.custom-card .card-link {
+    position: absolute; /* Positions the link absolutely */
+    right:20px;
+    bottom: 15px; /* Distance from the bottom of the card */
+    font-family: "Bona Nova SC", serif;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid #344e41; /* Adds a border */
+    border-radius: 5px; /* Rounds the corners */
+    background-color: #344e41;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.custom-card .card-link:hover {
+    color: #000000;
+}
+
+/* List styles within the card */
+.custom-card ul {
+    padding-left: 20px; /* Adds space before list items */
+}
+
+.custom-card ul ul {
+    list-style-type: disc; /* Nested lists use disc style */
+    padding-left: 20px; /* Adds space before nested list items */
+}
+
+.custom-card li {
+    margin-bottom: 10px; /* Adds space between list items */
+}
+
