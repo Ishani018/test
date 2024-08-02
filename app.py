@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, send_file,url_for
+from flask import Flask, render_template, request, redirect, send_file, url_for
 import os
 
 app = Flask(__name__)
@@ -7,7 +7,12 @@ app.secret_key = "flower123456"
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['DOWNLOAD_FOLDER'] = 'downloads'
 
+# Create upload and download folders if they don't exist
+if not os.path.exists(app.config['UPLOAD_FOLDER']):
+    os.makedirs(app.config['UPLOAD_FOLDER'])
 
+if not os.path.exists(app.config['DOWNLOAD_FOLDER']):
+    os.makedirs(app.config['DOWNLOAD_FOLDER'])
 
 @app.route("/")
 def home():
@@ -35,21 +40,25 @@ def upload():
                 content = f.read()
 
         if content:
-            if same_length == 'on':
-                try:
-                    length = int(stanza_lengths_str)
-                    formatted_poem = uniform_process_poem(content, length)
-                except ValueError:
-                    formatted_poem = "Invalid stanza length provided."
-            else:
-                lengths = non_uniform_length(stanza_lengths_str)
-                formatted_poem = non_uniform_process_poem(content, lengths)
+            try:
+                if same_length == 'on':
+                    try:
+                        length = int(stanza_lengths_str)
+                        formatted_poem = uniform_process_poem(content, length)
+                    except ValueError:
+                        formatted_poem = "Invalid stanza length provided."
+                else:
+                    lengths = non_uniform_length(stanza_lengths_str)
+                    formatted_poem = non_uniform_process_poem(content, lengths)
 
-            # Save the formatted poem to a text file
-            poem_filename = "formatted_poem.txt"
-            download_path = os.path.join(app.config['DOWNLOAD_FOLDER'], poem_filename)
-            with open(download_path, 'w') as f:
-                f.write(formatted_poem)
+                # Save the formatted poem to a text file
+                poem_filename = "formatted_poem.txt"
+                download_path = os.path.join(app.config['DOWNLOAD_FOLDER'], poem_filename)
+                with open(download_path, 'w') as f:
+                    f.write(formatted_poem)
+
+            except Exception as e:
+                formatted_poem = f"Error processing poem: {e}"
 
     return render_template("upload.html", formatted_poem=formatted_poem, download_path=download_path)
 
@@ -60,10 +69,7 @@ def download_file(filename):
 def uniform_process_poem(content, length):
     lines = content.splitlines()
     first_line = lines[0].strip()
-    content_lines = []
-    for line in lines[1:]:
-        if line.strip():
-            content_lines.append(line.strip())
+    content_lines = [line.strip() for line in lines[1:] if line.strip()]
 
     formatted_content = [first_line + "\n"]
 
@@ -90,10 +96,7 @@ def non_uniform_length(lengths_str):
 def non_uniform_process_poem(content, lengths):
     lines = content.splitlines()
     first_line = lines[0].strip()
-    content_lines = []
-    for line in lines[1:]:
-        if line.strip():
-            content_lines.append(line.strip())
+    content_lines = [line.strip() for line in lines[1:] if line.strip()]
 
     formatted_content = [first_line + "\n"]
 
