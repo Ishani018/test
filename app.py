@@ -9,4 +9,7 @@ app.secret_key = "flower123456"
 def home():
     return render_template("base.html")
 
+@app.route("/help")
+def help_page():
+    return render_template("help.html")
 

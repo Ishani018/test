@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+Help
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='help/helpstyle.css') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<div class="container mt-5">
+    <div class="card custom-card">
+        <div class="card-body">
+            <h5 class="card-title">How to Use Versify</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Your Guide to Formatting Poems</h6>
+            <p class="card-text">Versify is designed to help you format and organize your poems effortlessly. Follow the steps below to get started:</p>
+            <ul>
+                <li><strong>Step 1:</strong> Navigate to the "Upload" page by clicking the "Get Started" link below.</li>
+                <li><strong>Step 2:</strong> Upload your poem file using the "Upload Poem File" button. Alternatively, you can type or paste your poem content directly into the text area provided.</li>
+                <li><strong>Step 3:</strong> Choose how you want to format your poem:
+                    <ul>
+                        <li>If you want all stanzas to have the same number of lines, check the "All stanzas same length" checkbox and enter the number of lines per stanza in the field.</li>
+                        <li>If you prefer different stanza lengths, leave the checkbox unchecked and provide a comma-separated list of lengths in the field.</li>
+                    </ul>
+                </li>
+                <li><strong>Step 4:</strong> Click the "Upload" button to process and format your poem. The formatted poem will be displayed on the same page.</li>
+                <li><strong>Step 5:</strong> If the formatted poem is available, you can download it by clicking the "Download Formatted Poem" link.</li>
+            </ul>
+            <a href="/upload" class="card-link custom-get-started-link">Get Started</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
