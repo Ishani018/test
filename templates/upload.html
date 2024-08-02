@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}
+Upload
+{% endblock %}
+
+{% block content %}
+<br>
+<link rel="stylesheet" href="{{ url_for('static', filename='upload/uploadstyle.css') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<h1>Upload A Poem</h1>
+
+<form action="/upload" method="post" enctype="multipart/form-data" class="form-container">
+    <div class="form-content">
+        <!-- Form section -->
+        <div class="form-section">
+            <div class="form-controls">
+
+                <label for="file" class="label">Upload your content file:</label>
+                <input type="file" id="file" name="file" class="input-file choose-file-button"><br>
+
+                <label for="stanza_length" class="label">Lines per stanza:</label><br>
+                <div class="input-group">
+                    <input type="text" id="stanza_lengths" name="stanza_lengths" placeholder="e.g., 4, 3, 5 if all stanza not same length" class="input-text">
+                </div>
+                
+                <label for="same_length" class="label">
+                    <input type="checkbox" id="same_length" name="same_length"> All stanzas same length
+                </label><br><br>
+
+                <label for="content" class="label">Or type in your content:</label>
+                <textarea id="content" name="content" class="textarea-content"></textarea><br>
+
+                <button type="submit" class="button-submit">Upload</button><br>
+            </div>
+        </div>
+        
+        <!-- Container for the formatted poem -->
+        <div class="form-section">
+            <div class="form-controls">
+                <label for="formatted_poem" class="label">Formatted Poem:</label>
+                {% if download_path %}
+                    <a href="{{ url_for('download_file', filename='formatted_poem.txt') }}" class="button-download">Download Formatted Poem</a>
+                    <br><br>
+                {% endif %}
+                <textarea id="formatted_poem" name="formatted_poem" class="textarea-formatted" readonly>{{ formatted_poem | safe }}</textarea>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
