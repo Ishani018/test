@@ -5,20 +5,21 @@ import logging
 app = Flask(__name__)
 app.secret_key = "flower123456"
 
-app.config['UPLOAD_FOLDER'] = 'uploads'
-app.config['DOWNLOAD_FOLDER'] = 'downloads'
-'''
+# Use a writable directory
+app.config['UPLOAD_FOLDER'] = '/tmp/uploads'
+app.config['DOWNLOAD_FOLDER'] = '/tmp/downloads'
+
 # Create upload and download folders if they don't exist
 if not os.path.exists(app.config['UPLOAD_FOLDER']):
     os.makedirs(app.config['UPLOAD_FOLDER'])
 
 if not os.path.exists(app.config['DOWNLOAD_FOLDER']):
     os.makedirs(app.config['DOWNLOAD_FOLDER'])
-'''
+
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
 
-@app.route("/home")
+@app.route("/")
 def home():
     return render_template("home.html")
 
@@ -121,5 +122,3 @@ def non_uniform_process_poem(content, lengths):
 
     return "\n".join(formatted_content)
 
-if __name__ == "__main__":
-    app.run(debug=True)
