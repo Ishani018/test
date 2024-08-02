@@ -5,9 +5,10 @@ app = Flask(__name__)
 app.secret_key = "flower123456"
 
 
+
 @app.route("/")
 def home():
-    return render_template("base.html")
+    return render_template("home.html")
 
 @app.route("/help")
 def help_page():
